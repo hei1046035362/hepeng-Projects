@@ -1,0 +1,20 @@
+  # 修改工号和名字
+  git config --global user.name "hei1046035362"
+  git config --global user.email "779198444@qq.com"
+
+  # windows支持长路径，要不然代码路径太长会报错
+  git config --global core.longpaths true
+
+  # windows默认下载git代码，没有显示链接link属性问题
+  git config --global core.symlinks true
+
+  # windows下载代码编码格式，不会进行转换，提交不转换（默认安装会转换成windows）
+  git config --global core.autocrlf false
+
+
+  # 生成ssh key 
+  ssh-keygen -t rsa -C "49660@sangfor.com" -b 4096
+  # 然后一直回车
+  
+  cat ~/.ssh/id_rsa.pub
+  # 把打印的所有内容复制到github的public key里面
