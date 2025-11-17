@@ -1,0 +1,18 @@
+# This configures the RabbitMQ event handler.
+
+general: {
+	enabled = true					# By default the module is not enabled
+	events = "" # "core,plugins"					# Comma separated list of the events mask you're interested
+									# in. Valid values are none, sessions, handles, jsep, webrtc,
+									# media, plugins, transports, core, external and all. By
+									# default we subscribe to everything (all)
+	topic = "tgg-data-dev"	        # kafka mq topic
+
+	model = "media"                 # kafka mq model
+
+	json = "indented"				# Whether the JSON messages should be indented (default),
+									# plain (no indentation) or compact (no indentation and no spaces)
+
+	host = "54.177.152.244:9002"			# The address of the RabbitMQ server
+    roomlist_file = "/var/run/tgg_room_list.dat"   # file to dump room list
+}

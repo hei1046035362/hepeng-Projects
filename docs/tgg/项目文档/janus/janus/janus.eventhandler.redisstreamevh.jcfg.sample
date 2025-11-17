@@ -1,0 +1,19 @@
+# This configures the Redis event handler.
+
+general: {
+	enabled = true					# By default the module is not enabled
+	events = "plugins,core"					# Comma separated list of the events mask you're interested
+									# in. Valid values are none, sessions, handles, jsep, webrtc,
+									# media, plugins, transports, core, external and all. By
+									# default we subscribe to everything (all)
+
+	host = "10.100.1.36:6380,10.100.1.36:6381,10.100.1.36:6382"			# The address of the Rediscluster server
+	pwd = "idreamsky@123"
+	in_guser_stream="in:guser:stream"
+	out_guser_stream="out:guser:stream"
+
+	# report janus server ip to redis
+	server_hashkey="media_server_list:CN"  # hash key to report to, format is keyname:area
+	server_id="node1"
+
+}

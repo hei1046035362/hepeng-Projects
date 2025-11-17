@@ -1,0 +1,18 @@
+# This configures the RabbitMQ event handler.
+
+general: {
+	enabled = true					# By default the module is not enabled
+	events = "plugins,core"					# Comma separated list of the events mask you're interested
+									# in. Valid values are none, sessions, handles, jsep, webrtc,
+									# media, plugins, transports, core, external and all. By
+									# default we subscribe to everything (all)
+
+	host = "172.31.13.91:7001,172.31.13.91:7002,172.31.13.91:7003,172.31.13.91:7004,172.31.13.91:7005,172.31.13.91:7006"			# The address of the Rediscluster server
+	pwd = "bZSCEI3VyV"
+	in_guser_stream="in:guser:stream:dev"
+	out_guser_stream="out:guser:stream:dev"
+
+	# report janus server ip to redis
+	server_hashkey="media_server_list:US"  # hash key to report to, format is keyname:area
+	server_id="node_dev"
+}
